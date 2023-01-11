@@ -1,0 +1,9 @@
+Test cases for MyList class
+============================
+since the list contains integers(the assumption)
+=================================================
+::empty list
+	>>>MyList = __import__('1-my_list').MyList
+	>>>mylist = MyList()
+	>>>mylist.print_sorted()
+	[]
