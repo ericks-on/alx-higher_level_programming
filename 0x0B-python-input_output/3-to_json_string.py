@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+import json
 """this module contains function that serializes using json
 """
 
