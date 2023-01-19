@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-import json
 """module contains oly one function using json
 """
 
