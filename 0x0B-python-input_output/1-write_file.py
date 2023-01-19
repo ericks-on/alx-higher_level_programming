@@ -2,6 +2,8 @@
 """module contains a function used to write contents in atext file
 
 """
+
+
 def write_file(filename="", text=""):
     """this function uses write call to write to file
     

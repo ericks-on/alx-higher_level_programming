@@ -2,6 +2,8 @@
 """contains function to append contents in a file
 
 """
+
+
 def append_write(filename="", text=""):
     """this function appends text at the end of a file
     Attributes:
