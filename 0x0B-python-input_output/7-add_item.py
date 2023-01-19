@@ -12,19 +12,26 @@ save = __import__('5-save_to_json_file').save_to_json_file
 load = __import__('6-load_from_json_file').load_from_json_file
 
 
-def create_list():
+def add_to_list():
     """this function creates list and adds arguments to it
     
     Attributes:
         the_list: the list to add arguments
         l: length of argv
         args: argument vector
+        filename: name of file
+        f: object contained in json file
 
     Returns:
         list: a list containing all arguments already appended
 
     """
-    the_list = []
+    filename = 'add_item.json'
+    f = load(filename)
+    if f:
+        the_list = f
+    else:
+        the_list = []
     if len(sys.argv) > 1:
         args = sys.argv
         l = len(sys.argv)
@@ -41,7 +48,7 @@ def main():
         filename: name of the file
 
     """
-    obj = create_list()
+    obj = add_to_list()
     filename = 'add_item.json'
     save(obj, filename)
 
