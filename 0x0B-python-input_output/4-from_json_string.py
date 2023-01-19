@@ -2,6 +2,10 @@
 """module contains oly one function using json
 """
 
+
+import json
+
+
 def from_json_string(my_str):
     """this function returns an object rep by a JSON string
 

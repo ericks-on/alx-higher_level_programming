@@ -14,5 +14,4 @@ def to_json_string(my_obj):
         string: the JSON representation of the object
 
     """
-    r = json.dumps(my_obj)
-    return(r)
+    return (json.dumps(my_obj))
