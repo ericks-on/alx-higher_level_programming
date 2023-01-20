@@ -27,11 +27,13 @@ def add_to_list():
 
     """
     filename = 'add_item.json'
-    f = load(filename)
-    if f:
-        the_list = f
-    else:
+    f = open(filename, 'a+', encoding='utf-8')
+    f.seek(0)
+    if len(f.read()) == 0:
         the_list = []
+        f.close()
+    else:
+        the_list = load(filename)
     if len(sys.argv) > 1:
         args = sys.argv
         l = len(sys.argv)
