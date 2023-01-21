@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This module contains task 10 for project 0x0B
+"""This module contains task 11 for project 0x0B
 """
 
 
@@ -45,3 +45,16 @@ class Student:
             return (new_dict)
         else:
             return (self.__dict__)
+
+    def reload_from_json(self, json):
+        """This method replaces all of the Student instance
+
+        Args:
+            json: dictionary containing the attributes to replace
+
+        """
+        for key in json.keys():
+            # check if key is in class attributes dictionary
+            if key in (self.__dict__).keys():
+                # change the attribute values
+                self.key = json[key]
