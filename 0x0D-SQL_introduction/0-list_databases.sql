@@ -1,2 +1,3 @@
---listing the databases
-SHOW DATABASES;
+-- listing the databases
+
+SELECT schema_name FROM information_schema.schemata;
