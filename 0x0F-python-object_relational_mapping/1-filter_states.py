@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""this module uses MySQLdb
+"""this module uses MySQLdb to filter states in database
 """
 
 import MySQLdb as sql
@@ -17,7 +17,7 @@ def filter_states(*args, **argv):
     """
     try:
         db = sql.connect(host='localhost', port=3306, user=sys.argv[1],
-                        passwd=sys.argv[2], db=sys.argv[3])
+                         passwd=sys.argv[2], db=sys.argv[3])
     except sql.Error as e:
         raise (e)
     else:
