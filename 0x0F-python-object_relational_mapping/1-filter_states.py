@@ -12,8 +12,10 @@ def obtain_states(*args, **argv):
     c = db.cursor()
     c.execute("""SELECT * from states WHERE name LIKE
             'N%' ORDER BY id""")
-    for row in c.fetchall():
-        print(row)
+    result = c.fetchall()
+    if result:
+        for row in result:
+            print(row)
     c.close()
     db.close()
 
