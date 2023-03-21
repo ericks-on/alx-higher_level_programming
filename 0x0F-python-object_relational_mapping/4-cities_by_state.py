@@ -21,7 +21,8 @@ def get_cities(*args, **kargs):
     except sql.Error as e:
         raise (e)
     else:
-        query = "SELECT * FROM cities ORDER BY id"
+        query = """SELECT cities.id, cities.name, states.name FROM cities
+        INNER JOIN states ON states.id = cities.state_id ORDER BY id"""
         c = db.cursor()
         c.execute(query)
         result = c.fetchall()
