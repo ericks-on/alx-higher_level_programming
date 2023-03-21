@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-"""this module contains function to filter states in adatabase 
+"""this module contains function to filter states in adatabase
 """
 
-import sys 
+import sys
 import MySQLdb as sql
 
 
@@ -16,20 +16,21 @@ def filter_states(*args, **argv):
         name: the pattern to match
     """
     try:
-        db = sql.connect(user=sys.argv[1], password=sys.argv[2], db=sys.argv[3],                         host='localhost', port=3306)
+        db = sql.connect(user=sys.argv[1], password=sys.argv[2],
+                         db=sys.argv[3], host='localhost', port=3306)
     except sql.Error as e:
         raise (e)
     else:
         pattern = sys.argv[4]
         table = 'states'
-        my_query = "SELECT * FROM {} WHERE name='{}' ORDER BY id".format(table,
-                pattern)
+        my_query = """SELECT *
+        FROM {} WHERE name='{}' ORDER BY id""".format(table, pattern)
         c = db.cursor()
         c.execute(my_query)
         result = c.fetchall()
         if result:
             for row in result:
-                print (row)
+                print(row)
         c.close()
         db.close()
 
