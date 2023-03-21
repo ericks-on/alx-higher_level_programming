@@ -5,7 +5,7 @@ when obtaining data from the states table
 
 
 import MySQLdb as sql
-import  sys
+import sys
 
 
 def safe_filter(*args, **kargs):
