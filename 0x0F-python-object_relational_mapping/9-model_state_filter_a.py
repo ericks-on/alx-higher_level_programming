@@ -28,7 +28,8 @@ def a_states(user, passwd, db):
     session = Session()
 
     # querying
-    result = session.query(State).filter(State.name.like('%a%')).all()
+    result = session.query(State).filter(State.name.like('%a%')
+                                         ).order_by(State.id).all()
     if result:
         for r in result:
             print(f'{r.id}: {r.name}')

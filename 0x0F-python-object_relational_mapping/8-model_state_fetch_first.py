@@ -24,7 +24,7 @@ def first_state():
     engine = create_engine(url, pool_pre_ping=True)
     Session = sessionmaker(bind=engine)
     session = Session()
-    first = session.query(State).first()
+    first = session.query(State).order_by(State.id).first()
     if first:
         print(f"{first.id}: {first.name}")
     else:
